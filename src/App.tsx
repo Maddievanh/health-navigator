@@ -13,12 +13,17 @@ import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
+import ScrollToTop from "./components/ScrollToTop"; // <-- add this import
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+
+        <ScrollToTop />   {/* <-- add this line */}
+
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/mental-health" element={<MentalHealth />} />
@@ -26,9 +31,9 @@ const App = () => (
           <Route path="/medication-assistance" element={<MedicationAssistance />} />
           <Route path="/community-support" element={<CommunitySupport />} />
           <Route path="/about" element={<AboutUs />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
