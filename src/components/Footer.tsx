@@ -1,5 +1,6 @@
 import { Heart, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,7 +29,11 @@ const Footer = () => {
               <li><a href="#resources" className="hover:text-primary transition-colors">Resources</a></li>
               <li><a href="#map" className="hover:text-primary transition-colors">Find Care</a></li>
               <li><a href="#chat" className="hover:text-primary transition-colors">AI Assistant</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
+              <li>
+  <Link to="/about" className="hover:text-primary transition-colors">
+    About Us
+  </Link>
+</li>
             </ul>
           </div>
 

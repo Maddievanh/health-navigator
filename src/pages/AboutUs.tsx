@@ -72,10 +72,9 @@ const AboutUs = () => {
             >
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                HealthMapp was created with a simple yet powerful mission: to make healthcare 
-                resources accessible to everyone. We believe that navigating the healthcare 
+                HealthMapp was created to make healthcare resources accessible to everyone. We believe that navigating the healthcare 
                 system shouldn't be overwhelming or confusing. Our AI-powered platform helps 
-                users find the care, support, and resources they need—all in one place.
+                users find the care, support, and resources they need all in one place.
               </p>
             </motion.div>
           </div>
@@ -93,16 +92,16 @@ const AboutUs = () => {
               <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
               <div className="prose prose-lg mx-auto text-muted-foreground">
                 <p className="leading-relaxed mb-4">
-                  HealthMapp was born from a recognition that too many people struggle to find 
+                  HealthMapp was created from a recognition that too many people struggle to find 
                   the healthcare resources they need. Whether it's locating a nearby clinic, 
                   understanding medication assistance programs, or finding mental health support, 
                   the journey to care can be daunting.
                 </p>
                 <p className="leading-relaxed mb-4">
-                  By combining modern AI technology with a warm, user-friendly interface, 
+                  By combining modern AI technology with a user friendly interface 
                   HealthMapp bridges the gap between people and the healthcare services 
                   available to them. Our platform provides personalized guidance, helping 
-                  users navigate their options with confidence.
+                  users navigate their options with ease.
                 </p>
                 <p className="leading-relaxed">
                   We're committed to continuously improving and expanding our resources to 
