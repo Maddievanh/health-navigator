@@ -31,6 +31,24 @@ const ChatSection = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Listen for ZIP code search events from Hero
+  useEffect(() => {
+    const handleZipSearch = (event: CustomEvent<{ zipCode: string }>) => {
+      const query = `Find healthcare facilities and resources near ZIP code ${event.detail.zipCode}`;
+      const userMessage: Message = { role: "user", content: query };
+      const updatedMessages = [...messages, userMessage];
+      
+      setMessages(updatedMessages);
+      setIsLoading(true);
+      streamChat(updatedMessages);
+    };
+
+    window.addEventListener("zipCodeSearch", handleZipSearch as EventListener);
+    return () => {
+      window.removeEventListener("zipCodeSearch", handleZipSearch as EventListener);
+    };
+  }, [messages]);
+
   const streamChat = async (userMessages: Message[]) => {
     const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/healthcare-chat`;
     
