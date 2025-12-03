@@ -9,8 +9,13 @@ const Hero = () => {
   const [zipCode, setZipCode] = useState("");
 
   const handleSearch = () => {
-    if (zipCode) {
-      document.getElementById("map")?.scrollIntoView({ behavior: "smooth" });
+    if (zipCode.trim()) {
+      // Dispatch custom event with ZIP code for chat section
+      window.dispatchEvent(
+        new CustomEvent("zipCodeSearch", { detail: { zipCode: zipCode.trim() } })
+      );
+      // Scroll to chat section
+      document.getElementById("chat")?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
