@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brain, Heart, Pill, Users, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import mentalHealthImg from "@/assets/mental-health.jpg";
 import physicalHealthImg from "@/assets/physical-health.jpg";
 
@@ -12,6 +13,7 @@ const resources = [
     description: "Access counseling, therapy, and mental wellness resources",
     image: mentalHealthImg,
     color: "from-sage-green to-soft-teal",
+    href: "/mental-health",
   },
   {
     icon: Heart,
@@ -19,18 +21,21 @@ const resources = [
     description: "Find clinics, doctors, and healthcare facilities near you",
     image: physicalHealthImg,
     color: "from-warm-coral to-accent",
+    href: "/physical-health",
   },
   {
     icon: Pill,
     title: "Medication Assistance",
     description: "Discover prescription discounts and assistance programs",
     color: "from-soft-teal to-primary",
+    href: "/medication-assistance",
   },
   {
     icon: Users,
     title: "Community Support",
     description: "Connect with support groups and community resources",
     color: "from-accent to-sage-green",
+    href: "/community-support",
   },
 ];
 
@@ -89,9 +94,11 @@ const ResourceCards = () => {
                     <p className="text-muted-foreground mb-4 text-sm">
                       {resource.description}
                     </p>
-                    <Button variant="ghost" className="gap-2 p-0 h-auto font-semibold text-primary group-hover:gap-3 transition-all">
-                      Learn More
-                      <ArrowRight className="h-4 w-4" />
+                    <Button variant="ghost" className="gap-2 p-0 h-auto font-semibold text-primary group-hover:gap-3 transition-all" asChild>
+                      <Link to={resource.href}>
+                        Learn More
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
                     </Button>
                   </div>
                 </Card>
